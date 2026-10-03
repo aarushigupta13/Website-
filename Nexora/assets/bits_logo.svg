@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 35 350 340" width="100%" height="100%">
+  <rect x="25" y="35" width="350" height="340" rx="32" fill="#FFFFFF"/>
+  
+  <defs>
+    <!-- Smooth curved path for top banner text -->
+    <path id="topArcPath" d="M 60,195 A 148,148 0 0,1 340,195" fill="none"/>
+  </defs>
+
+  <g transform="translate(0, 10)">
+    <!-- TOP ARCHING BANNER -->
+    <path d="M 35,200 A 168,168 0 0,1 365,200 L 345,200 A 145,145 0 0,0 55,200 Z" fill="#1A2B88" stroke="#C69214" stroke-width="3.5"/>
+    
+    <!-- CURVED BANNER TEXT -->
+    <text font-family="'Arial Black', 'Inter', sans-serif" font-size="14.5" font-weight="900" fill="#FFFFFF" letter-spacing="1.1">
+      <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">
+        BIRLA INSTITUTE OF TECHNOLOGY &amp; SCIENCE, PILANI
+      </textPath>
+    </text>
+
+    <!-- COG / GEAR WHEEL OUTER GOLD & BLUE RINGS -->
+    <circle cx="200" cy="200" r="126" fill="#C69214"/>
+    <circle cx="200" cy="200" r="116" fill="#1A2B88"/>
+
+    <!-- COG TEETH (12 EVENLY SPACED TEETH) -->
+    <g fill="#C69214">
+      <rect x="193" y="68" width="14" height="14" />
+      <rect x="193" y="318" width="14" height="14" />
+      <rect x="68" y="193" width="14" height="14" />
+      <rect x="318" y="193" width="14" height="14" />
+      <rect x="105" y="105" width="14" height="14" transform="rotate(30 112 112)" />
+      <rect x="274" y="274" width="14" height="14" transform="rotate(30 281 281)" />
+      <rect x="274" y="105" width="14" height="14" transform="rotate(-30 281 112)" />
+      <rect x="105" y="274" width="14" height="14" transform="rotate(-30 112 281)" />
+      <rect x="105" y="105" width="14" height="14" transform="rotate(60 112 112)" />
+      <rect x="274" y="274" width="14" height="14" transform="rotate(60 281 281)" />
+      <rect x="274" y="105" width="14" height="14" transform="rotate(-60 281 112)" />
+      <rect x="105" y="274" width="14" height="14" transform="rotate(-60 112 281)" />
+    </g>
+
+    <!-- WHITE INNER CIRCULAR CONTAINER -->
+    <circle cx="200" cy="200" r="102" fill="#FFFFFF" stroke="#1A2B88" stroke-width="2"/>
+
+    <!-- INNER SHIELD CLIPPED REGION -->
+    <g clip-path="url(#innerShieldClip)">
+      <clipPath id="innerShieldClip">
+        <circle cx="200" cy="200" r="98"/>
+      </clipPath>
+
+      <!-- LEFT REGION: Cyan Blue (Molecular Structure / Chemistry) -->
+      <path d="M 200,200 L 100,100 A 98,98 0 0,0 200,298 Z" fill="#50C5E6"/>
+      <!-- Lattice Nodes & Connectors -->
+      <g stroke="#FFFFFF" stroke-width="2.5" fill="#1A2B88">
+        <line x1="130" y1="140" x2="160" y2="165"/>
+        <line x1="160" y1="165" x2="140" y2="195"/>
+        <line x1="140" y1="195" x2="175" y2="225"/>
+        <line x1="130" y1="140" x2="120" y2="175"/>
+        <line x1="120" y1="175" x2="140" y2="195"/>
+        <line x1="140" y1="195" x2="135" y2="235"/>
+        <line x1="135" y1="235" x2="175" y2="225"/>
+
+        <circle cx="130" cy="140" r="6" fill="#FFFFFF"/>
+        <circle cx="160" cy="165" r="6.5"/>
+        <circle cx="120" cy="175" r="5.5" fill="#FFFFFF"/>
+        <circle cx="140" cy="195" r="6.5"/>
+        <circle cx="135" cy="235" r="6.5"/>
+        <circle cx="175" cy="225" r="6" fill="#FFFFFF"/>
+      </g>
+
+      <!-- RIGHT REGION: Golden Yellow (Clock Tower & Atom Orbits) -->
+      <path d="M 200,200 L 300,100 A 98,98 0 0,1 200,298 Z" fill="#FFE66D"/>
+      <!-- Dark Blue Clock Tower Silhouette -->
+      <path d="M 265,140 L 272,160 L 268,260 L 250,260 L 258,160 Z" fill="#1A2B88"/>
+      <polygon points="265,140 260,160 270,160" fill="#1A2B88"/>
+      <!-- Gold Orbit Rings around Tower -->
+      <ellipse cx="260" cy="190" rx="22" ry="10" transform="rotate(-25 260 190)" fill="none" stroke="#C69214" stroke-width="2.5"/>
+      <ellipse cx="260" cy="205" rx="26" ry="11" transform="rotate(20 260 205)" fill="none" stroke="#C69214" stroke-width="2.5"/>
+
+      <!-- CENTER INVERTED RED TRIANGLE (Lotus Torch) -->
+      <path d="M 200,298 L 138,102 L 262,102 Z" fill="#D31D24" stroke="#FFFFFF" stroke-width="3.5"/>
+
+      <!-- GOLD LOTUS MOTIF -->
+      <g fill="#C69214" stroke="#FFFFFF" stroke-width="1.2">
+        <!-- Stem -->
+        <rect x="196" y="195" width="8" height="75" rx="2"/>
+        <!-- Multi-layered Lotus Petals -->
+        <path d="M 200,118 L 220,150 L 200,168 L 180,150 Z"/>
+        <path d="M 200,135 L 232,175 L 200,192 L 168,175 Z"/>
+      </g>
+    </g>
+
+    <!-- BOTTOM TRAPEZOID RIBBON (ज्ञानं परमं बलम्) -->
+    <path d="M 95,305 L 305,305 L 285,348 L 115,348 Z" fill="#1A2B88" stroke="#C69214" stroke-width="3.5"/>
+    <text x="200" y="335" font-family="'Noto Sans Devanagari', 'Arial Unicode MS', sans-serif" font-size="21" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">ज्ञानं परमं बलम्</text>
+  </g>
+</svg>

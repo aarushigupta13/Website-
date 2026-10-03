@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" rx="32" fill="#FFFFFF"/>
+  
+  <!-- SHIELD EMBLEM CENTERED -->
+  <g transform="translate(125, 20)">
+    <clipPath id="amityShield">
+      <path d="M 0,20 Q 75,5 150,20 L 150,110 Q 150,185 75,215 Q 0,185 0,110 Z" />
+    </clipPath>
+
+    <!-- Shield Background & Split -->
+    <g clip-path="url(#amityShield)">
+      <!-- Golden Yellow Base -->
+      <rect x="0" y="0" width="150" height="220" fill="#FFB800"/>
+      <!-- Navy Blue Top Arc -->
+      <path d="M 0,0 Q 75,0 150,0 L 150,75 Q 75,65 0,75 Z" fill="#002147"/>
+      
+      <!-- Text inside Navy Header -->
+      <text x="75" y="42" font-family="'Times New Roman', Georgia, serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">AMITY</text>
+      <text x="75" y="62" font-family="'Times New Roman', Georgia, serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">UNIVERSITY</text>
+
+      <!-- Flame & Torch in Yellow Area -->
+      <!-- Torch Holder Base -->
+      <path d="M 60,190 L 90,190 L 86,155 L 64,155 Z" fill="#002147"/>
+      <path d="M 62,160 H 88 M 64,168 H 86 M 66,176 H 84 M 68,184 H 82" stroke="#FFFFFF" stroke-width="2"/>
+      
+      <!-- White Stylized Torch Flame -->
+      <path d="M 75,85 C 60,115 78,135 68,155 C 82,150 88,135 82,120 C 88,114 86,98 75,85 Z" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Outer Shield Border -->
+    <path d="M 0,20 Q 75,5 150,20 L 150,110 Q 150,185 75,215 Q 0,185 0,110 Z" fill="none" stroke="#002147" stroke-width="6"/>
+  </g>
+
+  <!-- TYPOGRAPHY CENTERED & PROMINENT -->
+  <text x="200" y="295" font-family="'Times New Roman', Times, Georgia, serif" font-size="68" font-weight="900" fill="#002147" text-anchor="middle" letter-spacing="2">AMITY</text>
+  <text x="200" y="350" font-family="'Times New Roman', Times, Georgia, serif" font-size="38" font-weight="bold" fill="#002147" text-anchor="middle" letter-spacing="5">UNIVERSITY</text>
+</svg>

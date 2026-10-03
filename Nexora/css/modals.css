@@ -1,0 +1,275 @@
+/* FULL-SCREEN & BACKDROP OVERLAY MODALS & EVALUATION VIEWS */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 16, 61, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background: var(--soft-white);
+  border: 1px solid var(--professional-grey);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.97);
+  transition: transform var(--transition-smooth);
+}
+
+.modal-backdrop.active .modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 20px 32px;
+  background: var(--pure-white);
+  border-bottom: 1px solid var(--professional-grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--soft-white);
+  border: 1px solid var(--professional-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--charcoal);
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--navy);
+  color: var(--pure-white);
+}
+
+.modal-body {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* SIDE-BY-SIDE COMPARISON TABLE MATRIX */
+.compare-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--pure-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--professional-grey);
+}
+
+.compare-matrix-table th, 
+.compare-matrix-table td {
+  padding: 16px 20px;
+  border: 1px solid var(--professional-grey);
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+.compare-matrix-table th {
+  background: var(--navy-dark);
+  color: var(--pure-white);
+  text-align: left;
+  font-family: var(--font-heading);
+}
+
+.compare-field-label {
+  background: var(--soft-white);
+  font-weight: 700;
+  color: var(--navy);
+  width: 180px;
+}
+
+.compare-val-highlight {
+  background: var(--trust-green-light);
+  border-left: 3px solid var(--trust-green);
+  font-weight: 600;
+}
+
+/* STICKY SUB-NAV FOR PROGRAMME & UNIVERSITY VIEWS */
+.sticky-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--pure-white);
+  border-bottom: 1px solid var(--professional-grey);
+  display: flex;
+  gap: 24px;
+  padding: 0 32px;
+  overflow-x: auto;
+}
+
+.subnav-tab {
+  padding: 14px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--charcoal-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.subnav-tab.active {
+  color: var(--trust-green);
+  border-bottom-color: var(--trust-green);
+  font-weight: 700;
+}
+
+/* PROGRAMME EVALUATION SECTIONS */
+.eval-section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--professional-grey);
+}
+
+.eval-section:last-child {
+  border-bottom: none;
+}
+
+.eval-section-title {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ADMISSION ROUTE WAYPOINTS */
+.admission-waypoints {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.admission-step-card {
+  background: var(--pure-white);
+  border: 1px solid var(--professional-grey);
+  border-top: 3px solid var(--trust-green);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+
+.admission-step-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--trust-green);
+}
+
+.admission-step-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 4px;
+}
+
+/* CURRICULUM ACCORDION */
+.curriculum-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.curriculum-sem-header {
+  background: var(--pure-white);
+  border: 1px solid var(--professional-grey);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.curriculum-sem-body {
+  padding: 16px 20px;
+  background: var(--soft-white);
+  border: 1px solid var(--professional-grey);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.subject-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  list-style: none;
+}
+
+.subject-item {
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SPRING ENTRY ANIMATION & TAB SLIDE ANIMATION */
+.compare-entry-spring {
+  animation: springIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes springIn {
+  0% { opacity: 0; transform: scale(0.92) translateY(12px); }
+  70% { opacity: 1; transform: scale(1.02) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.tab-slide-fade {
+  animation: tabSlideFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabSlideFade {
+  0% { opacity: 0; transform: translateX(8px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* TAB BUTTON STYLING FOR WISHLIST & COMPARE */
+.wishlist-tab, .compare-tab {
+  font-family: var(--font-heading);
+  font-weight: 750;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compare-entry-spring, .tab-slide-fade {
+    animation: none !important;
+  }
+}
+

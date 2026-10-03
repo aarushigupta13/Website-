@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" rx="32" fill="#FFFFFF"/>
+  
+  <!-- SYMBIOSIS EMBLEM -->
+  <g transform="translate(100, 20)">
+    <!-- Maroon Hexagon / Shield -->
+    <polygon points="100,10 190,60 190,160 100,210 10,160 10,60" fill="#8B1D24"/>
+    <polygon points="100,22 178,67 178,153 100,197 22,153 22,67" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+    
+    <!-- White Flying Dove of Peace & World Unity -->
+    <path d="M 60,135 C 70,85 130,70 155,95 C 130,105 110,120 105,145 C 95,130 80,130 60,135 Z" fill="#FFFFFF"/>
+    <circle cx="140" cy="85" r="8" fill="#F4B41A"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <text x="200" y="285" font-family="'Arial Black', 'Inter', sans-serif" font-size="52" font-weight="900" fill="#8B1D24" text-anchor="middle" letter-spacing="2">SYMBIOSIS</text>
+  <text x="200" y="338" font-family="'Times New Roman', serif" font-size="30" font-weight="700" fill="#333333" text-anchor="middle" letter-spacing="4">INTERNATIONAL</text>
+</svg>

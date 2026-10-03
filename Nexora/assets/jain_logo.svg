@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 15 370 370" width="100%" height="100%">
+  <rect x="15" y="15" width="370" height="370" rx="32" fill="#FFFFFF"/>
+  
+  <!-- DARK NAVY CIRCLE -->
+  <circle cx="200" cy="200" r="180" fill="#213363"/>
+
+  <!-- JGI LOGO TEXT & YELLOW DOT -->
+  <g transform="translate(0, 10)">
+    <!-- J & G Letters -->
+    <text x="145" y="252" font-family="'Inter', 'Arial Black', 'Helvetica Neue', sans-serif" font-size="152" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-6">JG</text>
+
+    <!-- 'i' Vertical Stem -->
+    <rect x="248" y="152" width="28" height="100" fill="#FFFFFF"/>
+
+    <!-- Bright Yellow Dot on 'i' -->
+    <circle cx="262" cy="115" r="18" fill="#FFC814"/>
+  </g>
+</svg>

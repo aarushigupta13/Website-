@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <rect width="400" height="400" rx="32" fill="#FFFFFF"/>
+  
+  <!-- CHRIST UNIVERSITY EMBLEM -->
+  <g transform="translate(110, 20)">
+    <!-- Deep Navy Shield -->
+    <path d="M 10,20 Q 90,5 170,20 L 170,120 Q 170,185 90,215 Q 10,185 10,120 Z" fill="#0C2340" stroke="#C59B27" stroke-width="5"/>
+    
+    <!-- Gold Open Book -->
+    <path d="M 45,100 Q 90,85 90,125 Q 90,85 135,100 L 135,145 Q 90,130 90,165 Q 90,130 45,145 Z" fill="#FFFFFF" stroke="#C59B27" stroke-width="2"/>
+    
+    <!-- Candle / Light of Excellence -->
+    <path d="M 90,50 L 96,75 L 84,75 Z" fill="#E65100"/>
+    <circle cx="90" cy="45" r="5" fill="#FFB300"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <text x="200" y="285" font-family="'Times New Roman', Times, serif" font-size="64" font-weight="900" fill="#0C2340" text-anchor="middle" letter-spacing="3">CHRIST</text>
+  <text x="200" y="340" font-family="'Times New Roman', Times, serif" font-size="34" font-weight="700" fill="#C59B27" text-anchor="middle" letter-spacing="4">UNIVERSITY</text>
+</svg>

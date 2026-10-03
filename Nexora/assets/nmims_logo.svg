@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 320 355" width="100%" height="100%">
+  <rect x="40" y="20" width="320" height="355" rx="32" fill="#FFFFFF"/>
+  
+  <!-- EMBLEM CONTAINER -->
+  <g transform="translate(200, 125)">
+    <!-- Shield Outline & Background -->
+    <clipPath id="shieldClip">
+      <path d="M -55,-90 Q -55,-95 -50,-95 L 50,-95 Q 55,-95 55,-90 L 55,20 Q 55,55 0,78 Q -55,55 -55,20 Z" />
+    </clipPath>
+
+    <g clip-path="url(#shieldClip)">
+      <!-- Top Left: Dark Grey -->
+      <rect x="-60" y="-100" width="60" height="115" fill="#464646"/>
+      
+      <!-- Top Right: Dark Grey with White Flame -->
+      <rect x="0" y="-100" width="60" height="115" fill="#464646"/>
+      <path d="M 0,15 C 10,-30 25,-60 50,-65 L 55,-95 L 0,-95 Z" fill="#FFFFFF"/>
+
+      <!-- Bottom Left: Dark Grey with White Horizontal Stripes -->
+      <rect x="-60" y="15" width="60" height="70" fill="#464646"/>
+      <rect x="-60" y="27" width="60" height="8" fill="#FFFFFF"/>
+      <rect x="-60" y="47" width="60" height="8" fill="#FFFFFF"/>
+
+      <!-- Bottom Right: Red -->
+      <rect x="0" y="15" width="60" height="70" fill="#D3232A"/>
+      
+      <!-- Vertical Split Line -->
+      <line x1="0" y1="-100" x2="0" y2="85" stroke="#FFFFFF" stroke-width="3"/>
+    </g>
+
+    <!-- Laurel Wreath (Leaves around bottom of shield) -->
+    <g fill="#4A4A4A" stroke="#FFFFFF" stroke-width="0.5">
+      <!-- Left Laurel Branch -->
+      <path d="M -58,15 C -65,30 -50,55 -30,70 L -27,65 C -45,52 -58,30 -52,15 Z" />
+      <path d="M -58,0 C -68,5 -65,18 -55,20 Z" />
+      <path d="M -62,18 C -72,25 -67,38 -56,38 Z" />
+      <path d="M -58,35 C -66,45 -58,56 -48,52 Z" />
+      <path d="M -48,50 C -53,62 -42,70 -34,64 Z" />
+      <path d="M -35,62 C -38,72 -26,78 -20,70 Z" />
+      <path d="M -22,70 C -22,80 -10,82 -6,73 Z" />
+
+      <!-- Right Laurel Branch -->
+      <path d="M 58,15 C 65,30 50,55 30,70 L 27,65 C 45,52 58,30 52,15 Z" />
+      <path d="M 58,0 C 68,5 65,18 55,20 Z" />
+      <path d="M 62,18 C 72,25 67,38 56,38 Z" />
+      <path d="M 58,35 C 66,45 58,56 48,52 Z" />
+      <path d="M 48,50 C 53,62 42,70 34,64 Z" />
+      <path d="M 35,62 C 38,72 26,78 20,70 Z" />
+      <path d="M 22,70 C 22,80 10,82 6,73 Z" />
+    </g>
+  </g>
+
+  <!-- TYPOGRAPHY SECTION -->
+  <!-- SVKM's -->
+  <text x="200" y="245" font-family="'Times New Roman', Times, 'Georgia', serif" font-size="28" font-weight="bold" fill="#333333" text-anchor="middle">SVKM's</text>
+  
+  <!-- NMIMS -->
+  <text x="195" y="315" font-family="'Times New Roman', Times, 'Georgia', serif" font-size="78" font-weight="900" fill="#222222" text-anchor="middle" letter-spacing="2">NMIMS</text>
+  <!-- Registered Symbol -->
+  <text x="348" y="265" font-family="sans-serif" font-size="18" font-weight="bold" fill="#222222">®</text>
+
+  <!-- Divider Line -->
+  <line x1="50" y1="330" x2="350" y2="330" stroke="#333333" stroke-width="2.5"/>
+
+  <!-- Subtitle: Deemed to be UNIVERSITY -->
+  <text x="200" y="362" font-family="'Times New Roman', Times, 'Georgia', serif" font-size="22" font-weight="500" fill="#333333" text-anchor="middle">
+    Deemed to be <tspan font-size="25" font-weight="bold" letter-spacing="3">UNIVERSITY</tspan>
+  </text>
+</svg>

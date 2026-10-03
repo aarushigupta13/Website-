@@ -1,0 +1,166 @@
+/* RESPONSIVE LAYOUT & MOBILE OPTIMIZATIONS */
+
+@media (max-width: 1240px) {
+  .nav-links {
+    gap: 14px;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--pure-white);
+    border-bottom: 1px solid var(--professional-grey);
+    padding: 24px;
+    gap: 16px;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-supporting-text {
+    margin: 0 auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .waypoints-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .waypoints-line, .waypoints-line-active {
+    display: none;
+  }
+
+  .waypoint-item {
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .journey-indicator {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .compass-container {
+    width: 320px;
+    height: 320px;
+    padding: 16px;
+  }
+
+  .compass-center-hub {
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+  }
+
+  .compass-center-title {
+    font-size: 0.8rem;
+  }
+
+  .direction-node {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+    gap: 4px;
+  }
+
+  .dir-pos-0 { top: calc(50% - 118px); left: 50%; }
+  .dir-pos-1 { top: calc(50% - 83px); left: calc(50% + 83px); }
+  .dir-pos-2 { top: 50%; left: calc(50% + 118px); }
+  .dir-pos-3 { top: calc(50% + 83px); left: calc(50% + 83px); }
+  .dir-pos-4 { top: calc(50% + 118px); left: 50%; }
+  .dir-pos-5 { top: calc(50% + 83px); left: calc(50% - 83px); }
+  .dir-pos-6 { top: 50%; left: calc(50% - 118px); }
+  .dir-pos-7 { top: calc(50% - 83px); left: calc(50% - 83px); }
+
+  .direction-dropdown-menu {
+    width: 250px;
+    padding: 10px 12px;
+  }
+
+  .route-step-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .custom-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-major-input-wrapper {
+    flex-direction: column;
+  }
+
+  .recalculate-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admission-waypoints {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-tray {
+    width: 90%;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

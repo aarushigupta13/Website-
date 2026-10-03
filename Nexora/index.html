@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA | Navigate What Comes Next - Education Discovery & Comparison Platform</title>
+  <meta name="description"
+    content="NEXORA is a student-first education discovery and decision platform. Discover on-campus offline and online programmes and universities, compare fees, eligibility, and accreditation, and navigate your career route.">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;850&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS STYLESHEETS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/compass.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=20">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="compass-intro-running">
+
+  <!-- COMPASS INTRO TRANSITION OVERLAY -->
+  <div class="compass-intro-overlay" id="compassIntroOverlay">
+    <div class="intro-branding-header">
+      <h1 class="intro-brand-title">NEXORA</h1>
+    </div>
+    <div class="intro-tagline-footer">
+      <span class="intro-tagline-text">NAVIGATE WHAT COMES NEXT</span>
+    </div>
+    <button class="intro-skip-btn" id="introSkipBtn" type="button" aria-label="Skip intro animation">
+      Skip ➔
+    </button>
+  </div>
+
+  <!-- NAVBAR HEADER -->
+  <header class="navbar" id="mainHeader">
+    <div class="container navbar-inner">
+      <a href="javascript:void(0)" class="brand-logo" id="brandLogo" onclick="app.navigateToHome()">
+        <div class="brand-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z" />
+          </svg>
+        </div>
+        <div>
+          <span>NEXORA</span>
+          <span class="brand-tagline-sub">Navigate what comes next</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="javascript:void(0)" class="nav-link active" onclick="app.navigateToHome();">Home</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="app.navigateToProgrammesPage();">Programmes</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="app.navigateToUniversitiesPage();">Universities</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="app.navigateToComparePage();">Compare</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="app.navigateToInsightsPage();">Insights</a></li>
+          <li><a href="javascript:void(0)" class="nav-link" onclick="app.openPoliciesModal('privacy');">Policies</a></li>
+          <li><a href="javascript:void(0)" class="nav-link nav-cta-tab" id="navNeedHelpBtn" onclick="app.openNeedHelpModal();"><span class="help-bubble-icon">💬</span> Need help?</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm nav-shortlist-btn" id="shortlistBtn" onclick="app.openShortlistModal()">
+          <span class="heart-icon">♡</span> Shortlist (<span id="shortlistCount">0</span>)
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="app.navigateToPersonalizedRoute()">
+          Personalize My Route
+        </button>
+        <button class="mobile-menu-toggle btn btn-secondary btn-sm" id="mobileMenuToggle" style="display: none;">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 1: HOMEPAGE CONTAINER (#homeView)                          -->
+  <!-- =================================================================== -->
+  <div id="homeView" class="page-view active">
+
+    <!-- HERO SECTION WITH UNIVERSAL CATEGORIZED SEARCH -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- HERO TEXT & CTAS -->
+          <div class="hero-content">
+            <div class="badge badge-trust">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Student-First Education Decision Platform
+            </div>
+            <h1 class="hero-headline">
+              Don't start with a degree.<br>
+              <span class="highlight">Start with a destination.</span>
+            </h1>
+            <p class="hero-supporting-text">
+              Explore on-campus and online programmes and universities, understand the differences, compare your options and make a more informed education decision.
+            </p>
+
+            <div class="hero-cta-group">
+              <button class="btn btn-primary btn-lg" onclick="app.navigateToPersonalizedRoute()">
+                Personalize My Route
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+              <button class="btn btn-secondary btn-lg" onclick="app.navigateToProgrammesPage()">
+                Explore Programmes
+              </button>
+            </div>
+
+            <!-- UNIVERSAL CATEGORIZED PREDICTIVE SEARCH BAR (DIRECT DISCOVERY) -->
+            <div class="universal-search-wrapper" style="margin-top: 28px; position: relative; z-index: 100;">
+              <div style="font-size: 0.78rem; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage-green); margin-bottom: 8px;">
+                🔍 DIRECT DISCOVERY • I ALREADY KNOW WHAT I'M LOOKING FOR
+              </div>
+              <div class="career-search-box" id="universalSearchBox" style="position: relative; z-index: 100;">
+                <div class="search-input-container">
+                  <div class="input-ghost-wrapper">
+                    <span class="search-ghost-text" id="careerSearchGhost"></span>
+                    <input type="text" class="career-search-input" id="careerSearchInput"
+                      placeholder="Search a role (e.g. /role digital marketing), university, or course..."
+                      autocomplete="off" spellcheck="false"
+                      oninput="if(window.app && window.app.handlePredictiveSearchInput) window.app.handlePredictiveSearchInput(this.value);" />
+                  </div>
+                  <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <button class="search-clear-btn" id="careerSearchClearBtn" type="button" aria-label="Clear search" style="display: none;" onclick="if(window.app && window.app.clearHomepageSearch) window.app.clearHomepageSearch();">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  </button>
+                  <button class="btn btn-primary search-action-btn" type="button" id="careerSearchSubmitBtn" onclick="if(window.app && window.app.executeHomepageSearch) window.app.executeHomepageSearch();">
+                    <span>Search</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- CATEGORIZED PREDICTIVE DROPDOWN MENU -->
+                <div class="career-search-dropdown" id="careerSearchDropdown" style="display: none;">
+                  <div class="dropdown-header">
+                    <span>CATEGORIZED MATCHES</span>
+                    <span class="hint-key">Press <kbd>Tab</kbd> or <kbd>↵</kbd> to select</span>
+                  </div>
+                  <div class="dropdown-suggestions-list" id="careerSearchSuggestions">
+                    <!-- Dynamically rendered with categorised sections -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- QUICK SEARCH DISCOVERY CHIPS TICKER SCROLLER -->
+              <div class="quick-discovery-tags">
+                <span class="quick-discovery-label">QUICK DISCOVERY:</span>
+                <div class="quick-discovery-viewport" id="quickDiscoveryViewport" title="Hover to pause • Click to search">
+                  <div class="quick-discovery-track" id="quickDiscoveryTrack">
+                    <!-- Group 1 -->
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role digital marketing expert')">💼 /role digital marketing expert</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Manipal')">🏛️ Manipal University</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('MBA')">🎓 Online MBA</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Data Science')">⚡ Data Science</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Corporate Lawyer')">💼 Corporate Lawyer</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role data scientist')">🧠 Data Scientist</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('NMIMS')">🏛️ NMIMS Mumbai</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role full stack engineer')">⚙️ Full Stack Engineer</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Amity')">🏛️ Amity University</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('BBA')">🎓 Online BBA</button>
+
+                    <!-- Duplicate Group 2 for seamless infinite marquee loop -->
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role digital marketing expert')" aria-hidden="true" tabindex="-1">💼 /role digital marketing expert</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Manipal')" aria-hidden="true" tabindex="-1">🏛️ Manipal University</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('MBA')" aria-hidden="true" tabindex="-1">🎓 Online MBA</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Data Science')" aria-hidden="true" tabindex="-1">⚡ Data Science</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Corporate Lawyer')" aria-hidden="true" tabindex="-1">💼 Corporate Lawyer</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role data scientist')" aria-hidden="true" tabindex="-1">🧠 Data Scientist</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('NMIMS')" aria-hidden="true" tabindex="-1">🏛️ NMIMS Mumbai</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('/role full stack engineer')" aria-hidden="true" tabindex="-1">⚙️ Full Stack Engineer</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('Amity')" aria-hidden="true" tabindex="-1">🏛️ Amity University</button>
+                    <button type="button" class="search-tag-chip" onclick="app.setHomepageSearch('BBA')" aria-hidden="true" tabindex="-1">🎓 Online BBA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MINI JOURNEY STEP -->
+            <div class="journey-indicator" style="margin-top: 24px;">
+              <span style="color: var(--navy); font-weight: 700;">DECISION JOURNEY:</span>
+              <span class="journey-step active">01 Discover</span>
+              <span class="journey-separator">→</span>
+              <span class="journey-step">02 Explore</span>
+              <span class="journey-separator">→</span>
+              <span class="journey-step">03 Shortlist</span>
+              <span class="journey-separator">→</span>
+              <span class="journey-step">04 Compare</span>
+              <span class="journey-separator">→</span>
+              <span class="journey-step">05 Decide</span>
+            </div>
+          </div>
+
+          <!-- DEGREE COMPASS INTERACTIVE ENGINE (HERO RIGHT COLUMN) -->
+          <div class="compass-hero-card" id="compassHeroCard">
+            <div class="compass-hero-card-badge" id="compassHeroCardBadge">
+              🧭 DEGREE ROUTE COMPASS
+            </div>
+
+            <div class="compass-wrapper" id="compassWrapper">
+              <div class="compass-container" id="compassContainer">
+                <div class="compass-ring-outer"></div>
+                <div class="compass-ring-inner"></div>
+
+                <!-- Cardinal Ticks -->
+                <div class="compass-tick" style="top: 14px; left: 50%; transform: translateX(-50%);">N</div>
+                <div class="compass-tick" style="bottom: 14px; left: 50%; transform: translateX(-50%);">S</div>
+                <div class="compass-tick" style="left: 14px; top: 50%; transform: translateY(-50%);">W</div>
+                <div class="compass-tick" style="right: 14px; top: 50%; transform: translateY(-50%);">E</div>
+
+                <!-- Grid Overlay -->
+                <div class="compass-grid-line compass-grid-h"></div>
+                <div class="compass-grid-line compass-grid-v"></div>
+
+                <!-- Directional Spoke Rays -->
+                <div class="compass-rays-layer">
+                  <div class="compass-spoke" data-deg="0" style="transform: rotate(0deg);"></div>
+                  <div class="compass-spoke" data-deg="45" style="transform: rotate(45deg);"></div>
+                  <div class="compass-spoke" data-deg="90" style="transform: rotate(90deg);"></div>
+                  <div class="compass-spoke" data-deg="135" style="transform: rotate(135deg);"></div>
+                  <div class="compass-spoke" data-deg="180" style="transform: rotate(180deg);"></div>
+                  <div class="compass-spoke" data-deg="225" style="transform: rotate(225deg);"></div>
+                  <div class="compass-spoke" data-deg="270" style="transform: rotate(270deg);"></div>
+                  <div class="compass-spoke" data-deg="315" style="transform: rotate(315deg);"></div>
+                </div>
+
+                <!-- Dynamic 3D Vector Rotating Needle -->
+                <div class="compass-needle-container" id="compassNeedleContainer">
+                  <div class="compass-needle">
+                    <div class="compass-needle-north-wrapper">
+                      <div class="needle-north-left"></div>
+                      <div class="needle-north-right"></div>
+                      <div class="needle-spine"></div>
+                      <div class="needle-arrowhead-north"></div>
+                    </div>
+                    <div class="compass-needle-south-wrapper">
+                      <div class="needle-south-left"></div>
+                      <div class="needle-south-right"></div>
+                      <div class="needle-tail-south"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Center Interactive Hub -->
+                <div class="compass-center-hub" id="compassCenterHub" title="Click to rotate compass direction">
+                  <span class="compass-center-label">DEGREE</span>
+                  <span class="compass-center-title" id="compassHubTitle">COMPASS</span>
+                  <span class="compass-center-sub">SELECT TRACK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- GATEWAY SECTION: ROUTE STARTS HERE (GUIDED DISCOVERY) -->
+    <section class="section-padding bg-soft-white" id="routeStartsHere">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #005A2B; display: inline-block; animation: pulseGlowBadge 1.5s infinite;"></span>
+            GETTING STARTED • GUIDED DISCOVERY
+          </span>
+          <h2 class="section-title">ROUTE STARTS HERE</h2>
+          <p class="section-subtitle" style="font-size: 1.12rem; font-weight: 800; color: var(--navy); margin-top: 4px;">"Not sure what to search? Let NEXORA guide you."</p>
+        </div>
+
+        <div class="entry-grid">
+
+          <!-- OPTION 1: UNIVERSITIES DIRECTORY -->
+          <div class="entry-card" style="cursor: pointer;" onclick="app.navigateToUniversitiesPage()">
+            <div>
+              <div class="entry-card-badge">UNIVERSITY DIRECTORY</div>
+              <h2 class="entry-card-title">Explore the University</h2>
+              <p class="entry-card-desc">Discover accredited universities offering on-campus offline & online degrees, compare campus details, approvals, accreditation, and tuition fees.</p>
+            </div>
+            <button class="btn btn-navy" type="button" onclick="event.stopPropagation(); app.navigateToUniversitiesPage()">
+              Explore Universities →
+            </button>
+          </div>
+
+          <!-- OPTION 2: PROGRAMME DIRECTORY -->
+          <div class="entry-card" style="cursor: pointer;" onclick="app.navigateToProgrammesPage()">
+            <div>
+              <div class="entry-card-badge" style="color: var(--trust-green);">PROGRAMME DIRECTORY</div>
+              <h2 class="entry-card-title">Explore Your Degree</h2>
+              <p class="entry-card-desc">Explore on-campus offline and online degree programmes, compare specialisations, duration, eligibility criteria, and tuition fees across institutions.</p>
+            </div>
+            <button class="btn btn-primary" type="button" onclick="event.stopPropagation(); app.navigateToProgrammesPage()">
+              Explore Programmes →
+            </button>
+          </div>
+
+          <!-- OPTION 3: PERSONALIZED ROUTE -->
+          <div class="entry-card" style="cursor: pointer;" onclick="app.navigateToPersonalizedRoute()">
+            <div>
+              <div class="entry-card-badge" style="color: #7B1FA2; background: rgba(156, 39, 176, 0.1);">PERSONALIZED</div>
+              <h2 class="entry-card-title">"I'm still figuring it out."</h2>
+              <p class="entry-card-desc">Answer a few questions about your interests, background and priorities and let NEXORA build your route.</p>
+            </div>
+            <button class="btn btn-secondary" type="button" style="border-color: #7B1FA2; color: #7B1FA2;" onclick="event.stopPropagation(); app.navigateToPersonalizedRoute()">
+              Personalize My Route →
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- IMAGE GALLERY: ONE-ROW SCROLLING ANIMATION                          -->
+    <!-- =================================================================== -->
+    <section class="image-gallery-section" id="imageGallery">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 24px;">
+          <span class="section-eyebrow" style="display: inline-flex; align-items: center; gap: 8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            CAMPUS &amp; STUDENT LIFE
+          </span>
+          <h2 class="section-title">Image Gallery</h2>
+          <p class="section-subtitle">A glimpse into premier campus spaces, collaborative research labs, and academic journeys.</p>
+        </div>
+      </div>
+
+      <!-- INFINITE SCROLLING ROW (FULL WIDTH TICKER) -->
+      <div class="gallery-ticker-wrapper" aria-label="Campus Image Gallery Carousel">
+        <div class="gallery-ticker-track">
+
+          <!-- SET 1 -->
+          <div class="gallery-item">
+            <img src="assets/gallery_library.jpg" alt="Modern University Central Library" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">LEARNING SPACES</span>
+              <h3 class="gallery-caption">State-of-the-Art Central Library</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/gallery_students.jpg" alt="University Students on Campus Quad" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">CAMPUS LIFE</span>
+              <h3 class="gallery-caption">Collaborative Student Community</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/gallery_tech_lab.jpg" alt="Advanced Robotics and AI Lab" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">INNOVATION</span>
+              <h3 class="gallery-caption">Robotics &amp; AI Research Hub</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/campus.jpg" alt="World-Class University Infrastructure" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">INFRASTRUCTURE</span>
+              <h3 class="gallery-caption">World-Class Eco-Friendly Campus</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/gallery_auditorium.jpg" alt="Grand Academic Lecture Theatre" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">ACADEMIC EXCELLENCE</span>
+              <h3 class="gallery-caption">Tiered Lecture Amphitheatre</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/graduation_bg.jpg" alt="Graduation and Convocation Day" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">ACHIEVEMENT</span>
+              <h3 class="gallery-caption">Annual Convocation &amp; Degrees</h3>
+            </div>
+          </div>
+
+          <!-- SET 2 (DUPLICATE FOR SEAMLESS INFINITE LOOP) -->
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/gallery_library.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">LEARNING SPACES</span>
+              <h3 class="gallery-caption">State-of-the-Art Central Library</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/gallery_students.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">CAMPUS LIFE</span>
+              <h3 class="gallery-caption">Collaborative Student Community</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/gallery_tech_lab.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">INNOVATION</span>
+              <h3 class="gallery-caption">Robotics &amp; AI Research Hub</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/campus.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">INFRASTRUCTURE</span>
+              <h3 class="gallery-caption">World-Class Eco-Friendly Campus</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/gallery_auditorium.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">ACADEMIC EXCELLENCE</span>
+              <h3 class="gallery-caption">Tiered Lecture Amphitheatre</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item" aria-hidden="true">
+            <img src="assets/graduation_bg.jpg" alt="" class="gallery-img" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-pill">ACHIEVEMENT</span>
+              <h3 class="gallery-caption">Annual Convocation &amp; Degrees</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================== -->
+    <!-- MASTER PRODUCT EXPERIENCE: NEXORA CAREER ROUTE                       -->
+    <!-- =================================================================== -->
+    <section class="section-padding bg-pure-white" id="careerRouteSection">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">SIGNATURE PRODUCT EXPERIENCE</span>
+          <h2 class="section-title">NEXORA CAREER ROUTE</h2>
+          <p class="section-subtitle" style="font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-top: 4px;">"From where you are to where you want to go."</p>
+          <p class="section-subtitle" style="margin-top: 6px;">Connect careers, skills, degrees, programmes and universities in one guided journey. Powered by NEXORA Career Intelligence.</p>
+        </div>
+
+        <!-- MODE SWITCHER CONTROLS -->
+        <div class="route-mode-switcher-bar" id="routeModeSwitcherBar" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;">
+          <button class="btn route-mode-tab active" data-mode="career" onclick="app.switchRouteMode('career')">
+            🎯 Career-First Mode
+          </button>
+          <button class="btn route-mode-tab" data-mode="personalized" onclick="app.switchRouteMode('personalized')">
+            🪄 Personalize My Route (5-Step Assessment)
+          </button>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- MODE 1 MODULE: CAREER-FIRST & LIVE ROLE MAPPER                  -->
+        <!-- ============================================================== -->
+        <div id="careerFirstModule" class="route-mode-content">
+          <!-- LIVE ROLE MAPPER ENGINE -->
+          <div class="recalculate-box" style="margin-bottom: 36px;">
+            <div class="recalculate-header">
+              <div class="recalculate-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#005A2B" stroke-width="2.5">
+                  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                  <path d="M21 3v5h-5" />
+                </svg>
+                <span>Select or Search Target Career Role</span>
+              </div>
+              <span class="badge badge-trust">Live Career Intelligence</span>
+            </div>
+
+            <div class="recalculate-form">
+              <select class="form-select" id="recalculateSelect">
+                <!-- Options populated by recalculate.js -->
+              </select>
+              <button class="btn btn-primary" id="recalculateBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                  <path d="M21 3v5h-5" />
+                </svg>
+                Generate Career Route
+              </button>
+            </div>
+
+            <div id="recalculateResults">
+              <!-- Rendered dynamically by recalculate.js -->
+            </div>
+          </div>
+
+          <!-- CAREER CATEGORY TABS & CARDS GRID -->
+          <div class="career-tabs-scroller-container">
+            <button class="tab-scroll-arrow arrow-left" type="button" aria-label="Scroll left" onclick="app.scrollCareerTabs('left')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="career-tabs-viewport" id="careerTabsViewport">
+              <div class="career-tabs-track" id="careerTabsTrack">
+                <button class="btn btn-primary career-tab-btn active" data-key="ALL" onclick="app.filterCareers('ALL', this)">All Roles</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="BUSINESS" onclick="app.filterCareers('BUSINESS', this)">Business</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="TECHNOLOGY" onclick="app.filterCareers('TECHNOLOGY', this)">Technology</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="DATA" onclick="app.filterCareers('DATA', this)">Data & AI</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="MARKETING" onclick="app.filterCareers('MARKETING', this)">Marketing</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="DESIGN" onclick="app.filterCareers('DESIGN', this)">Design</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="FINANCE" onclick="app.filterCareers('FINANCE', this)">Finance</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="HEALTHCARE" onclick="app.filterCareers('HEALTHCARE', this)">Healthcare</button>
+                <button class="btn btn-secondary career-tab-btn" data-key="MEDIA" onclick="app.filterCareers('MEDIA', this)">Media</button>
+              </div>
+            </div>
+
+            <button class="tab-scroll-arrow arrow-right" type="button" aria-label="Scroll right" onclick="app.scrollCareerTabs('right')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+            </button>
+          </div>
+
+          <div class="career-cards-scroller-container">
+            <button class="card-scroll-arrow arrow-left" id="careerCardsLeftBtn" type="button" aria-label="Scroll cards left" onclick="app.scrollCareerCards('left')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="career-cards-viewport" id="careerCardsViewport">
+              <div class="careers-grid" id="careerCardsGrid">
+                <!-- Rendered by app.js -->
+              </div>
+            </div>
+
+            <button class="card-scroll-arrow arrow-right" id="careerCardsRightBtn" type="button" aria-label="Scroll cards right" onclick="app.scrollCareerCards('right')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- MODE 2 MODULE: STUDY-FIRST & PROGRAMME NAVIGATION              -->
+        <!-- ============================================================== -->
+        <div id="studyFirstModule" class="route-mode-content" style="display: none;">
+          <div style="background: var(--soft-white); border: 1px solid var(--professional-grey); border-radius: 20px; padding: 28px 24px; margin-bottom: 28px; text-align: center;">
+            <span class="badge badge-trust" style="margin-bottom: 10px;">DEGREE &amp; PROGRAMME DIRECTORY</span>
+            <h3 style="font-size: 1.4rem; font-weight: 850; color: var(--navy); margin-bottom: 6px;">Explore Degree Pathways &amp; Custom Majors</h3>
+            <p style="color: var(--charcoal-muted); max-width: 650px; margin: 0 auto 18px auto; font-size: 0.92rem; line-height: 1.5;">Browse accredited degree options or search for any specialized major to find matching UGC-entitled universities and programmes.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-md" onclick="app.navigateToProgrammesPage()">
+                Explore All Degree Programmes →
+              </button>
+              <button class="btn btn-secondary btn-md" onclick="app.navigateToUniversitiesPage()">
+                View Accredited Universities
+              </button>
+            </div>
+          </div>
+
+            <!-- CUSTOM MAJOR FINDER -->
+            <div class="custom-major-container" id="customMajorContainer">
+              <div class="custom-major-card">
+                <div class="custom-major-header">
+                  <div class="custom-major-icon-badge">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="m21 21-4.3-4.3" />
+                      <path d="M11 8v6M8 11h6" />
+                    </svg>
+                  </div>
+                  <div class="custom-major-titles">
+                    <div class="custom-major-eyebrow">CUSTOM NAVIGATION</div>
+                    <h3 class="custom-major-title">Can't find your major in the compass?</h3>
+                  </div>
+                </div>
+
+                <div class="custom-major-input-wrapper">
+                  <div class="custom-major-input-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="m21 21-4.3-4.3" />
+                    </svg>
+                    <input type="text" id="customMajorInput"
+                      placeholder="Type your major (e.g. Psychology, Law, AI, Biotech...)" autocomplete="off">
+                  </div>
+                  <button class="btn btn-primary btn-sm" id="customMajorSearchBtn" type="button">
+                    Map Path
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="custom-major-pills">
+                  <span class="pills-label">Popular:</span>
+                  <button type="button" class="major-pill" data-major="Psychology">Psychology</button>
+                  <button type="button" class="major-pill" data-major="Cyber Law">Cyber Law</button>
+                  <button type="button" class="major-pill" data-major="Biotechnology">Biotechnology</button>
+                  <button type="button" class="major-pill" data-major="Artificial Intelligence">AI & Robotics</button>
+                </div>
+
+                <!-- DYNAMIC RESULTS DISPLAY -->
+                <div class="custom-major-results" id="customMajorResults" style="display: none;"></div>
+              </div>
+            </div>
+          </div>
+
+        <!-- ============================================================== -->
+        <!-- MODE 3 MODULE: PERSONALIZED 5-STEP WIZARD ASSESSMENT            -->
+        <!-- ============================================================== -->
+        <div id="personalizedModule" class="route-mode-content" style="display: none;">
+          <div style="max-width: 760px; margin: 0 auto; background: var(--soft-white); border: 1px solid var(--border-grey); border-radius: 16px; padding: 36px 32px; box-shadow: 0 8px 30px rgba(0,0,0,0.04);">
+            <div id="personalizedWizardContainer">
+              <!-- Rendered dynamically by app.js initInPageWizard() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- STATIC VISUAL EXPLAINER: FROM GOAL TO UNIVERSITY               -->
+        <!-- ============================================================== -->
+        <div class="static-route-explainer" id="routeExplainerSection">
+
+          <!-- SCENIC SKY & LANDSCAPE BACKGROUND -->
+          <svg class="explainer-landscape-bg" viewBox="0 0 1080 180" preserveAspectRatio="none" aria-hidden="true">
+            <!-- Sky Cloud puff on upper left -->
+            <path d="M 20,40 C 35,22 65,24 80,36 C 96,20 130,22 145,38 C 162,32 182,42 185,58 C 188,72 172,82 150,82 L 28,82 C 10,82 5,68 12,54 C 14,48 16,44 20,40 Z" fill="#FFFFFF" opacity="0.45" />
+            <!-- Back hill -->
+            <path d="M 0,80 Q 280,30 550,65 T 1080,55 L 1080,180 L 0,180 Z" fill="#DCEFE4" opacity="0.65" />
+            <!-- Winding path on right -->
+            <path d="M 830,180 C 860,135 915,115 965,85 C 995,68 1035,62 1080,56 L 1080,68 C 1040,74 1002,82 975,98 C 930,126 880,148 855,180 Z" fill="#EBF4EE" opacity="0.9" />
+            <!-- Mid hill -->
+            <path d="M 0,115 Q 340,70 650,105 T 1080,95 L 1080,180 L 0,180 Z" fill="#CEE5D6" opacity="0.75" />
+            <!-- Front hill -->
+            <path d="M 0,150 Q 420,105 800,140 T 1080,130 L 1080,180 L 0,180 Z" fill="#BFDFC9" opacity="0.85" />
+          </svg>
+
+          <!-- CRISP VECTOR SIGNPOST ON LEFT -->
+          <div class="explainer-signpost" aria-hidden="true">
+            <svg width="96" height="130" viewBox="0 0 96 130" fill="none">
+              <!-- Grey Boulder Rock -->
+              <ellipse cx="46" cy="116" rx="42" ry="14" fill="#5E7066"/>
+              <ellipse cx="44" cy="113" rx="36" ry="13" fill="#7D8E84"/>
+              <ellipse cx="41" cy="109" rx="28" ry="10" fill="#9FB0A6"/>
+              <!-- Foliage at base -->
+              <circle cx="12" cy="118" r="9" fill="#1E4731"/>
+              <circle cx="22" cy="114" r="8" fill="#2E5C44"/>
+              <circle cx="72" cy="116" r="9" fill="#1E4731"/>
+              <circle cx="82" cy="120" r="8" fill="#2E5C44"/>
+              <path d="M 68,110 Q 75,98 84,106" stroke="#2E5C44" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 18,108 Q 12,98 6,104" stroke="#2E5C44" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Wooden Post -->
+              <rect x="41" y="16" width="9" height="96" rx="2" fill="#1A2D23"/>
+              <rect x="43" y="16" width="3" height="96" fill="#2D4638" opacity="0.7"/>
+              <!-- Plaque 1: EXPLORE (pointing right) -->
+              <path d="M12 20 h54 l14 11 l-14 11 h-54 z" fill="#143022" stroke="#0A1C13" stroke-width="1.2"/>
+              <circle cx="44" cy="31" r="1.5" fill="#A8CEBC"/>
+              <text x="42" y="34.5" fill="#FFFFFF" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="900" letter-spacing="0.08em" text-anchor="middle">EXPLORE</text>
+              <!-- Plaque 2: COMPARE (pointing left) -->
+              <path d="M78 48 h-54 l-14 11 l14 11 h54 z" fill="#143022" stroke="#0A1C13" stroke-width="1.2"/>
+              <circle cx="46" cy="59" r="1.5" fill="#A8CEBC"/>
+              <text x="48" y="62.5" fill="#FFFFFF" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="900" letter-spacing="0.08em" text-anchor="middle">COMPARE</text>
+              <!-- Plaque 3: CHOOSE (pointing right) -->
+              <path d="M12 76 h54 l14 11 l-14 11 h-54 z" fill="#143022" stroke="#0A1C13" stroke-width="1.2"/>
+              <circle cx="44" cy="87" r="1.5" fill="#A8CEBC"/>
+              <text x="42" y="90.5" fill="#FFFFFF" font-family="'Manrope', sans-serif" font-size="8.5" font-weight="900" letter-spacing="0.08em" text-anchor="middle">CHOOSE</text>
+            </svg>
+          </div>
+
+          <!-- CRISP VECTOR PAPER AIRPLANE ON RIGHT -->
+          <div class="explainer-airplane" aria-hidden="true">
+            <svg width="74" height="58" viewBox="0 0 74 58" fill="none">
+              <!-- Origami Facets with subtle lighting -->
+              <path d="M 70,6 L 14,26 L 36,37 Z" fill="#005A2B"/>
+              <path d="M 70,6 L 36,37 L 41,49 Z" fill="#003517"/>
+              <path d="M 70,6 L 41,49 L 52,35 Z" fill="#007A3B"/>
+              <path d="M 70,6 L 52,35 L 14,26 Z" fill="#2E7D32"/>
+            </svg>
+          </div>
+
+          <!-- HEADER -->
+          <div class="route-explainer-header">
+            <span class="route-explainer-eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z" />
+              </svg>
+              HOW NEXORA CONNECTS THE DOTS
+            </span>
+            <h3 class="route-explainer-title">FROM GOAL TO UNIVERSITY</h3>
+            <p class="route-explainer-subtitle">NEXORA helps you explore the connections between where you want to go and what you can study to get there.</p>
+          </div>
+
+          <!-- CLOTHESLINE AND HANGING CARDS -->
+          <div class="clothesline-wrapper">
+            <div class="clothesline-mobile-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Swipe horizontally to view full path
+            </div>
+            <div class="clothesline-inner-track">
+              <!-- SVG wire that passes directly through the 5 pegs and extends to edges -->
+              <svg class="clothesline-svg" viewBox="0 0 1080 90" preserveAspectRatio="none" aria-hidden="true">
+                <!-- Full-width wire curve -->
+                <path d="M -10,3 C 15,4 25,5 45,7 C 75,9 110,9 140,10 C 240,16 280,26 340,32 C 430,40 480,42 540,42 C 600,42 650,40 740,32 C 800,26 840,16 940,10 C 970,9 1005,9 1035,7 C 1055,5 1065,4 1090,3" fill="none" stroke="#16432B" stroke-width="2.2" stroke-linecap="round" />
+                <!-- Left anchor node -->
+                <circle cx="45" cy="7" r="4.5" fill="#005A2B" stroke="#FFFFFF" stroke-width="1.5" />
+                <!-- Right anchor node -->
+                <circle cx="1035" cy="7" r="4.5" fill="#005A2B" stroke="#FFFFFF" stroke-width="1.5" />
+                <!-- Playful looping flight trail up toward paper airplane -->
+                <path d="M 850,26 C 880,10 920,-2 960,8 C 990,16 1010,-6 1025,-16 C 1035,-22 1045,-18 1052,-24" fill="none" stroke="#005A2B" stroke-width="1.6" stroke-dasharray="4,4" />
+              </svg>
+
+              <div class="route-explainer-flow">
+
+                <!-- 01: CAREER -->
+                <div class="route-hanging-card card-career">
+                  <div class="hanging-peg"></div>
+                  <div class="card-icon-wrap icon-career-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                    <!-- Floating leaf/bird accent -->
+                    <svg style="position: absolute; right: -12px; top: 2px; opacity: 0.7;" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                      <path d="M 2,10 C 4,6 8,6 10,9 C 11,6 14,7 15,10" stroke="#005A2B" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-concept-title">CAREER</h4>
+                  <p class="card-concept-desc">Where you want to go</p>
+
+                  <svg class="card-bottom-vignette" viewBox="0 0 180 46" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,30 Q45,14 90,26 T180,20 L180,46 L0,46 Z" fill="#E2EFE7" opacity="0.75" />
+                    <path d="M0,36 Q60,24 120,34 T180,28 L180,46 L0,46 Z" fill="#D0E7D8" opacity="0.85" />
+                  </svg>
+                </div>
+
+                <!-- 02: SKILLS -->
+                <div class="route-hanging-card card-skills">
+                  <div class="hanging-peg"></div>
+                  <div class="card-icon-wrap icon-skills-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    <!-- 3 dynamic energy sparks / dashes -->
+                    <svg style="position: absolute; right: -10px; top: 0px; opacity: 0.85;" width="16" height="22" viewBox="0 0 16 22" fill="none">
+                      <path d="M 2,4 L 10,2 M 3,11 L 13,9 M 2,18 L 10,19" stroke="#007A3D" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-concept-title">SKILLS</h4>
+                  <p class="card-concept-desc">What you'll need to build</p>
+
+                  <svg class="card-bottom-vignette" viewBox="0 0 180 46" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,28 Q50,16 100,30 T180,22 L180,46 L0,46 Z" fill="#E2EFE7" opacity="0.75" />
+                    <path d="M0,36 Q70,26 140,36 T180,30 L180,46 L0,46 Z" fill="#D0E7D8" opacity="0.85" />
+                  </svg>
+                </div>
+
+                <!-- 03: DEGREE -->
+                <div class="route-hanging-card card-degree">
+                  <div class="hanging-peg"></div>
+                  <div class="card-icon-wrap icon-degree-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                  </div>
+                  <h4 class="card-concept-title">DEGREE</h4>
+                  <p class="card-concept-desc">The academic foundation</p>
+
+                  <!-- Scroll vignette motif -->
+                  <svg class="card-bottom-vignette" viewBox="0 0 180 46" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,32 Q60,18 120,30 T180,24 L180,46 L0,46 Z" fill="#E2EFE7" opacity="0.7" />
+                    <g transform="translate(130, 14) scale(0.68)" opacity="0.85">
+                      <rect x="0" y="4" width="30" height="20" rx="3" fill="#DDEEE3" stroke="#8CBF9F" stroke-width="1.2" />
+                      <path d="M4 10h22 M4 14h16 M4 18h18" stroke="#8CBF9F" stroke-width="1" />
+                      <path d="M-4 6 C-4 2, 2 2, 2 6 L2 24 C2 28, -4 28, -4 24 Z" fill="#C5DFCE" stroke="#8CBF9F" stroke-width="1.2"/>
+                      <circle cx="22" cy="20" r="3" fill="#005A2B" opacity="0.3"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <!-- 04: PROGRAMME -->
+                <div class="route-hanging-card card-programme">
+                  <div class="hanging-peg"></div>
+                  <div class="card-icon-wrap icon-programme-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                  </div>
+                  <h4 class="card-concept-title">PROGRAMME</h4>
+                  <p class="card-concept-desc">What you can study</p>
+
+                  <!-- Books vignette motif -->
+                  <svg class="card-bottom-vignette" viewBox="0 0 180 46" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,30 Q50,18 110,28 T180,24 L180,46 L0,46 Z" fill="#E2EFE7" opacity="0.7" />
+                    <g transform="translate(16, 16) scale(0.65)" opacity="0.85">
+                      <rect x="0" y="10" width="34" height="8" rx="2" fill="#CADFD2" stroke="#8CBF9F" stroke-width="1.2"/>
+                      <rect x="3" y="2" width="30" height="8" rx="2" fill="#DDEEE3" stroke="#8CBF9F" stroke-width="1.2"/>
+                      <path d="M30 14h4" stroke="#005A2B" stroke-width="1.5"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <!-- 05: UNIVERSITY -->
+                <div class="route-hanging-card card-university">
+                  <div class="hanging-peg"></div>
+                  <div class="card-icon-wrap icon-university-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" y1="21" x2="21" y2="21" />
+                      <line x1="6" y1="18" x2="6" y2="11" />
+                      <line x1="10" y1="18" x2="10" y2="11" />
+                      <line x1="14" y1="18" x2="14" y2="11" />
+                      <line x1="18" y1="18" x2="18" y2="11" />
+                      <polygon points="12 3 2 8 22 8 12 3" />
+                    </svg>
+                    <!-- Floating leaf accent -->
+                    <svg style="position: absolute; right: -12px; top: 0px; opacity: 0.75;" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M 2,12 C 5,7 10,7 13,10 M 8,4 C 11,2 14,3 15,6" stroke="#005A2B" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-concept-title">UNIVERSITY</h4>
+                  <p class="card-concept-desc">Where you can study it</p>
+
+                  <!-- University building silhouette vignette -->
+                  <svg class="card-bottom-vignette" viewBox="0 0 180 46" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,32 Q60,18 120,30 T180,24 L180,46 L0,46 Z" fill="#E2EFE7" opacity="0.75" />
+                    <g transform="translate(48, 8) scale(0.68)" opacity="0.78">
+                      <circle cx="10" cy="24" r="8" fill="#9CC5AB" />
+                      <circle cx="110" cy="24" r="8" fill="#9CC5AB" />
+                      <rect x="22" y="14" width="76" height="22" fill="#DDEEE3" stroke="#8CBF9F" stroke-width="1.2" />
+                      <polygon points="60 4 48 14 72 14" fill="#B7D9C3" stroke="#8CBF9F" stroke-width="1.2" />
+                      <line x1="32" y1="20" x2="32" y2="28" stroke="#8CBF9F" stroke-width="1.5" />
+                      <line x1="42" y1="20" x2="42" y2="28" stroke="#8CBF9F" stroke-width="1.5" />
+                      <line x1="78" y1="20" x2="78" y2="28" stroke="#8CBF9F" stroke-width="1.5" />
+                      <line x1="88" y1="20" x2="88" y2="28" stroke="#8CBF9F" stroke-width="1.5" />
+                      <path d="M54 36v-8a6 6 0 0 1 12 0v8" fill="#8CBF9F" />
+                    </g>
+                  </svg>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM STATEMENT WITH DIVIDER RULES -->
+          <div class="route-explainer-microcopy-wrap">
+            <span class="microcopy-rule"></span>
+            <p class="route-explainer-microcopy">&ldquo;Start with what you know. Explore the connections from there.&rdquo;</p>
+            <span class="microcopy-rule"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT PERSPECTIVES -->
+    <section class="student-perspectives-section" id="studentPerspectives">
+      <div class="container perspectives-container">
+        <div class="perspectives-grid">
+
+          <!-- CARD 1: TOP-LEFT HEADLINE -->
+          <div class="perspective-card perspective-card-headline">
+            <span class="perspective-eyebrow">STUDENT PERSPECTIVES</span>
+            <h3 class="perspective-title">Different goals.<br>Clearer decisions.</h3>
+          </div>
+
+          <!-- CARD 2: TOP-RIGHT POOJA SHARMA -->
+          <div class="perspective-card perspective-card-testimonial">
+            <img src="assets/pooja.png" alt="Pooja Sharma" class="perspective-avatar">
+            <div class="perspective-content">
+              <h4 class="perspective-name">Pooja Sharma</h4>
+              <div class="perspective-role">Enrolled in Online MCA &bull; Data Analyst</div>
+              <div class="perspective-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="perspective-divider"></div>
+              <p class="perspective-quote">&ldquo;The Career-First discovery path showed me exactly which skills I needed for Data Science before choosing a MCA degree. Super clear and structured!&rdquo;</p>
+            </div>
+          </div>
+
+          <!-- CARD 3: BOTTOM-LEFT ADITYA MEHTA -->
+          <div class="perspective-card perspective-card-testimonial">
+            <img src="assets/aditya.png" alt="Aditya Mehta" class="perspective-avatar">
+            <div class="perspective-content">
+              <h4 class="perspective-name">Aditya Mehta</h4>
+              <div class="perspective-role">Enrolled in Online BBA &bull; Digital Marketer</div>
+              <div class="perspective-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="perspective-divider"></div>
+              <p class="perspective-quote">&ldquo;The shortlist and compare feature saved me so much time. I didn't have to keep 15 tabs open or write notes manually on paper.&rdquo;</p>
+            </div>
+          </div>
+
+          <!-- CARD 4: BOTTOM-RIGHT HEADLINE -->
+          <div class="perspective-card perspective-card-headline">
+            <span class="perspective-eyebrow">WHAT STUDENTS SAY</span>
+            <h3 class="perspective-title">Real experiences.<br>Better choices.</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- UGC GUIDELINES & STATUTORY EQUIVALENCE SECTION -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #001B66 0%, #003399 100%); color: #ffffff;" id="ugcGuidelines">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 40px;">
+          <span class="badge" style="background: rgba(255,255,255,0.15); color: #81C784; border: 1px solid rgba(255,255,255,0.25); margin-bottom: 12px; font-weight: 750;">STATUTORY REGULATORY FRAMEWORK</span>
+          <h2 class="section-title" style="color: #ffffff;">UGC Guidelines for Online Degrees</h2>
+          <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.88);">Official University Grants Commission (UGC-DEB) rules governing entitlement, legal degree parity, permitted courses, and fee protection in India.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          
+          <!-- CARD 1: DEGREE PARITY GAZETTE -->
+          <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 16px; padding: 28px; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 14px;">📜</div>
+              <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 8px; font-weight: 800;">100% Legal &amp; Academic Parity</h3>
+              <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">Under UGC Gazette Notification (File No. 1-9/2018), degrees awarded through Online Mode by UGC-DEB entitled HEIs carry 100% legal parity with campus degrees for UPSC, Govt Job Exams, and Global Higher Education.</p>
+            </div>
+            <button class="btn btn-outline-navy btn-sm" style="margin-top: 20px; background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4);" onclick="app.openPoliciesModal('ugc')">
+              Read Gazette Rules ➔
+            </button>
+          </div>
+
+          <!-- CARD 2: INSTITUTIONAL CATEGORY & NAAC -->
+          <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 16px; padding: 28px; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 14px;">🏛️</div>
+              <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 8px; font-weight: 800;">NAAC A+ &amp; Category-1 Autonomy</h3>
+              <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">UGC mandates that only universities accredited with NAAC Grade 'A+' (CGPA 3.26+) or ranked in the Top-100 NIRF overall framework are entitled to offer online degrees without prior individual programme approvals.</p>
+            </div>
+            <button class="btn btn-outline-navy btn-sm" style="margin-top: 20px; background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4);" onclick="app.navigateToUniversitiesPage()">
+              View Entitled HEIs ➔
+            </button>
+          </div>
+
+          <!-- CARD 3: PERMITTED VS RESTRICTED COURSES -->
+          <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 16px; padding: 28px; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 14px;">⚖️</div>
+              <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 8px; font-weight: 800;">Permitted vs Restricted Fields</h3>
+              <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">UGC permits Online degrees in MBA, BBA, MCA, BCA, B.Com, Data Science &amp; MA. Engineering (B.Tech), Medicine, Nursing, Law (LL.B), and Pharmacy are strictly restricted in 100% online mode per council rules.</p>
+            </div>
+            <button class="btn btn-outline-navy btn-sm" style="margin-top: 20px; background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4);" onclick="app.navigateToProgrammesPage()">
+              Explore Approved Degrees ➔
+            </button>
+          </div>
+
+          <!-- CARD 4: STATUTORY FEE REFUND & PROCTORING -->
+          <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 16px; padding: 28px; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: 14px;">🛡️</div>
+              <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 8px; font-weight: 800;">UGC Fee Refund Mandate</h3>
+              <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">UGC statutory notifications protect students with guaranteed fee refund rules (100% refund on pre-session cancellation) and mandate AI &amp; Human Remote Proctored online semester examinations.</p>
+            </div>
+            <button class="btn btn-outline-navy btn-sm" style="margin-top: 20px; background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.4);" onclick="app.openPoliciesModal('refund')">
+              Fee Refund Policy ➔
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXORA INSIGHTS EDITORIAL SECTION -->
+    <section class="section-padding bg-soft-white" id="insights">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">EDITORIAL &amp; ADVISORY</span>
+          <h2 class="section-title">NEXORA INSIGHTS</h2>
+          <p class="section-subtitle">Deep 1000-word advisory guides with regulatory warnings, decision matrices, and risk audits.</p>
+        </div>
+
+        <!-- 6 FEATURED BLOGS GRID -->
+        <div class="insights-grid" id="homeInsightsGrid">
+          <!-- Rendered dynamically by app.js (6 featured blogs) -->
+        </div>
+
+        <!-- VIEW MORE BUTTON -->
+        <div style="text-align: center; margin-top: 36px;">
+          <button class="btn btn-primary btn-lg" onclick="app.navigateToInsightsPage()">
+            View More
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+    </section>
+
+    <!-- 3D COVER FLOW FAQS SECTION -->
+    <section class="section-padding faq-coverflow-section" id="faq">
+      <div class="container faq-deck-container">
+        <!-- TOP HEADER MATCHING SAMPLE DESIGN -->
+        <div class="faq-top-header text-center">
+          <span class="faq-pill-eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="faq-active-title" id="faqActiveTitle">What is NEXORA and how do 'Career-First' and 'Study-First' navigation modes work?</h2>
+          <p class="faq-active-subtitle" id="faqActiveSubtitle">Click the center card to pop up the verified answer • Question 1 of 9</p>
+        </div>
+
+        <!-- 3D CAROUSEL STAGE -->
+        <div class="faq-3d-stage-wrapper" id="faqStageWrapper">
+          <div class="faq-3d-stage" id="faqStage">
+            <!-- 3D Cards rendered dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- BOTTOM CONTROLS MATCHING SAMPLE IMAGE -->
+        <div class="faq-deck-controls">
+          <div class="faq-nav-pill">
+            <button type="button" class="faq-nav-arrow-btn btn-prev" id="faqBtnPrev" onclick="app.prevFAQCard()" aria-label="Previous Question">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="faq-nav-arrow-btn btn-next" id="faqBtnNext" onclick="app.nextFAQCard()" aria-label="Next Question">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- DOTS TRACK -->
+          <div class="faq-deck-dots" id="faqDeckDots">
+            <!-- Dot indicators rendered by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="section-padding bg-navy-dark" style="text-align: center;">
+      <div class="container">
+        <div style="max-width: 720px; margin: 0 auto;">
+          <span class="section-eyebrow" style="color: var(--sage-green);">START YOUR JOURNEY</span>
+          <h2 class="section-title" style="color: var(--pure-white); font-size: 2.75rem; margin-top: 8px;">
+            Ready to find your route?
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--professional-grey); margin-top: 16px; margin-bottom: 32px;">
+            Empowering Indian students with transparent career intelligence, verified degree pathways, and side-by-side programme evaluation.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-lg" onclick="app.navigateToPersonalizedRoute()">
+              Personalize My Route
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="app.navigateToProgrammesPage()">
+              Explore Programmes
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- END OF HOMEPAGE CONTAINER -->
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 2: DEDICATED UNIVERSITY PAGE CONTAINER (#universityView)   -->
+  <!-- =================================================================== -->
+  <div id="universityView" class="page-view" style="display: none;">
+    <!-- Rendered dynamically by ViewRenderers.renderFullUniversityPage(id) -->
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 3: DEDICATED UNIVERSITY PROGRAMME PAGE (#programmeView)   -->
+  <!-- =================================================================== -->
+  <div id="programmeView" class="page-view" style="display: none;">
+    <!-- Rendered dynamically by ViewRenderers.renderFullProgrammePage(id) -->
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 4: ALL PROGRAMMES DISCOVERY PAGE (#allProgrammesView)     -->
+  <!-- =================================================================== -->
+  <div id="allProgrammesView" class="page-view" style="display: none;">
+    <!-- TOP BREADCRUMB NAV -->
+    <div class="page-view-header">
+      <div class="container" style="max-width: 1280px;">
+        <div class="page-breadcrumb-nav">
+          <button class="back-link-btn" onclick="app.navigateToHome()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </button>
+          <div class="breadcrumb-trail">
+            <span class="crumb" onclick="app.navigateToHome()">Home</span>
+            <span class="crumb-sep">/</span>
+            <span class="crumb active">Programmes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMME DISCOVERY HEADER & FILTERS -->
+    <section class="section-padding bg-pure-white" style="padding-top: 36px; padding-bottom: 60px;">
+      <div class="container" style="max-width: 1280px;">
+        <div class="section-header text-center" style="margin-bottom: 28px;">
+          <span class="section-eyebrow">VERIFIED PROGRAMMES</span>
+          <h1 class="section-title" style="font-size: 2.2rem;">Find a programme that fits your next move.</h1>
+          <p class="section-subtitle">Discover verified on-campus offline and online undergraduate and postgraduate degree programmes with transparent fee structures and verified accreditation.</p>
+
+          <!-- DEDICATED PROGRAMME SEARCH BAR WITH DIRECT DISCOVERY & PREDICTIVE DROPDOWN -->
+          <div class="career-search-wrapper" style="margin-top: 24px; position: relative; z-index: 1000;">
+            <div class="career-search-box" id="allProgSearchBox" style="max-width: 740px; margin: 0 auto; position: relative;">
+              <div class="search-input-container">
+                <div class="input-ghost-wrapper">
+                  <span class="search-ghost-text" id="allProgSearchGhost"></span>
+                  <input type="text" class="career-search-input" id="allProgSearchInput"
+                    placeholder="Search any degree"
+                    autocomplete="off" spellcheck="false"
+                    oninput="if(window.app && window.app.handleAllProgSearchInput) window.app.handleAllProgSearchInput(this.value);" />
+                </div>
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <button class="search-clear-btn" id="allProgSearchClearBtn" type="button" aria-label="Clear search" style="display: none;" onclick="app.clearProgrammeSearch();">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+                <button class="btn btn-primary search-action-btn" type="button" id="allProgSearchSubmitBtn" onclick="app.executeAllProgSearch();">
+                  <span>Search</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- CATEGORIZED PREDICTIVE DROPDOWN MENU -->
+              <div class="career-search-dropdown" id="allProgSearchDropdown" style="display: none;">
+                <div class="dropdown-header">
+                  <span>CATEGORIZED MATCHES &amp; DISCOVERY</span>
+                  <span class="hint-key">Press <kbd>Tab</kbd> or <kbd>↵</kbd> to select</span>
+                </div>
+                <div class="dropdown-suggestions-list" id="allProgSearchSuggestions">
+                  <!-- Dynamically rendered with categorised sections -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 CATEGORY TABS SCROLLER WITH ARROWS ON BOTH SIDES -->
+        <div class="programme-tabs-scroller-container">
+          <button class="tab-scroll-arrow arrow-left" type="button" aria-label="Scroll tabs left" onclick="app.scrollProgrammeTabs('left')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+
+          <div class="programme-tabs-viewport" id="programmeTabsViewport">
+            <div class="programme-tabs-track" id="programmeTabsTrack">
+              <button class="btn btn-primary programme-tab-btn active" data-degree="ALL" onclick="app.filterProgrammesDegree('ALL', this)">🎓 All Degrees</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="Offline" onclick="app.filterProgrammesDegree('Offline', this)">🏛️ On-Campus (Offline)</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="Online" onclick="app.filterProgrammesDegree('Online', this)">🌐 100% Online</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="B.Tech" onclick="app.filterProgrammesDegree('B.Tech', this)">⚙️ B.Tech Engineering</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="MBA" onclick="app.filterProgrammesDegree('MBA', this)">💼 MBA</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="BBA" onclick="app.filterProgrammesDegree('BBA', this)">📊 BBA</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="MCA" onclick="app.filterProgrammesDegree('MCA', this)">💻 MCA</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="BCA" onclick="app.filterProgrammesDegree('BCA', this)">⚡ BCA</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="B.Des" onclick="app.filterProgrammesDegree('B.Des', this)">🎨 B.Des Design</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="B.Com" onclick="app.filterProgrammesDegree('B.Com', this)">🛒 B.Com</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="M.Com" onclick="app.filterProgrammesDegree('M.Com', this)">📈 M.Com</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="M.Sc" onclick="app.filterProgrammesDegree('M.Sc', this)">🔬 M.Sc</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="Data Science" onclick="app.filterProgrammesDegree('Data Science', this)">🧠 Data Science &amp; AI</button>
+              <button class="btn btn-secondary programme-tab-btn" data-degree="BA" onclick="app.filterProgrammesDegree('BA', this)">📰 BA Journalism</button>
+              <button class="btn btn-secondary programme-tab-btn" data-level="PG" onclick="app.filterProgrammesLevel('PG', this)">📜 Postgraduate (PG)</button>
+              <button class="btn btn-secondary programme-tab-btn" data-level="UG" onclick="app.filterProgrammesLevel('UG', this)">🎓 Undergraduate (UG)</button>
+              <button class="btn btn-secondary programme-tab-btn" data-level="POPULAR" onclick="app.filterProgrammesLevel('POPULAR', this)">⭐ Top Rated &amp; Popular</button>
+            </div>
+          </div>
+
+          <button class="tab-scroll-arrow arrow-right" type="button" aria-label="Scroll tabs right" onclick="app.scrollProgrammeTabs('right')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+        </div>
+
+        <!-- SECONDARY FILTER & SORT BAR -->
+        <div class="programme-filters-bar" style="background: #F4F6F8; border-radius: 12px; padding: 14px 20px; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--navy);">Filter By Degree:</span>
+            <!-- DEGREE TYPE SELECT -->
+            <select class="form-select form-select-sm" id="progDegreeFilter" onchange="app.handleProgDegreeSelectChange(this.value)" style="padding: 6px 12px; font-size: 0.85rem; width: auto;">
+              <option value="ALL">All Degrees &amp; Modes</option>
+              <option value="Offline">🏛️ Offline / On-Campus Programmes</option>
+              <option value="Online">🌐 100% Online Programmes</option>
+              <option value="B.Tech">B.Tech Engineering (Campus)</option>
+              <option value="MBA">MBA (Campus &amp; Online)</option>
+              <option value="BBA">BBA (Campus &amp; Online)</option>
+              <option value="MCA">MCA (Campus &amp; Online)</option>
+              <option value="BCA">BCA (Campus &amp; Online)</option>
+              <option value="B.Des">B.Des Design (Campus)</option>
+              <option value="M.Com">M.Com (Online)</option>
+              <option value="B.Com">B.Com (Online)</option>
+              <option value="M.Sc">M.Sc (Campus &amp; Online)</option>
+              <option value="BA">BA Journalism &amp; Comms</option>
+              <option value="Data Science">Data Science &amp; AI</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <span style="font-size: 0.85rem; font-weight: 750; color: var(--navy);" id="progCountDisplay">38 Verified Programmes</span>
+            <span style="font-size: 0.85rem; color: var(--charcoal-muted);">|</span>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--charcoal-muted);">Sort By:</span>
+            <select class="form-select form-select-sm" id="progSortSelect" onchange="app.applyProgrammeFilters()" style="padding: 6px 12px; font-size: 0.85rem; width: auto;">
+              <option value="relevance">Relevance</option>
+              <option value="fee_asc">Fees: Low to High</option>
+              <option value="fee_desc">Fees: High to Low</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- PROGRAMME CARDS FULL GRID CONTAINER -->
+        <div class="all-programmes-grid" id="programmesGrid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- VIEW MORE DEGREES ACTION CONTAINER -->
+        <div class="programmes-view-more-container" id="programmesViewMoreContainer" style="display: flex; justify-content: center; margin-top: 40px; margin-bottom: 24px;">
+          <button class="btn btn-navy btn-lg" id="programmesViewMoreBtn" type="button" onclick="app.toggleShowAllProgrammes()" style="padding: 12px 38px; font-size: 0.95rem; font-weight: 750; border-radius: var(--radius-full); box-shadow: 0 4px 18px rgba(0, 27, 102, 0.15); display: inline-flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.25s ease;">
+            <span>View More</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 5: ALL UNIVERSITIES DISCOVERY PAGE (#allUniversitiesView) -->
+  <!-- =================================================================== -->
+  <div id="allUniversitiesView" class="page-view" style="display: none;">
+    <!-- TOP BREADCRUMB NAV -->
+    <div class="page-view-header">
+      <div class="container" style="max-width: 1280px;">
+        <div class="page-breadcrumb-nav">
+          <button class="back-link-btn" onclick="app.navigateToHome()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </button>
+          <div class="breadcrumb-trail">
+            <span class="crumb" onclick="app.navigateToHome()">Home</span>
+            <span class="crumb-sep">/</span>
+            <span class="crumb active">Universities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNIVERSITY DISCOVERY HEADER & GRID -->
+    <section class="section-padding bg-pure-white" style="padding-top: 36px; padding-bottom: 60px;">
+      <div class="container" style="max-width: 1280px;">
+        <div class="section-header text-center" style="margin-bottom: 28px;">
+          <span class="section-eyebrow">INSTITUTIONAL DIRECTORY</span>
+          <h1 class="section-title" style="font-size: 2.2rem;">Explore universities</h1>
+          <p class="section-subtitle">Verified autonomous and accredited Indian universities offering high-quality higher education.</p>
+        </div>
+
+        <!-- UNIVERSITY SEARCH & FILTER BAR -->
+        <div style="max-width: 760px; margin: 0 auto 36px auto;">
+          <div class="search-input-container" style="box-shadow: 0 4px 20px rgba(0, 27, 102, 0.08); background: #fff; padding: 6px 12px 6px 20px; border-radius: 50px; border: 1.5px solid var(--border-grey); display: flex; align-items: center; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="text" id="univSearchInput" oninput="app.filterUniversityCards()" placeholder="Search university by name, location (e.g. Manipal, Amity, Chandigarh, NAAC)..." style="width: 100%; border: none; outline: none; background: transparent; font-size: 0.98rem; color: var(--navy); font-weight: 500;">
+            <button class="btn btn-primary btn-sm" onclick="app.filterUniversityCards()" style="border-radius: 40px; padding: 8px 18px; flex-shrink: 0;">
+              Search
+            </button>
+          </div>
+
+          <!-- POPULAR FILTER PILLS ANIMATED SCROLLER -->
+          <div class="univ-popular-scroller-wrapper">
+            <span class="univ-popular-label">
+              <span>Popular:</span>
+            </span>
+            <div class="univ-popular-viewport" id="univPopularViewport" title="Hover to pause • Click to filter">
+              <div class="univ-popular-track" id="univPopularTrack">
+                <!-- Group 1 -->
+                <button type="button" class="univ-popular-pill" data-tag="Manipal" onclick="app.filterUniversityByTag('Manipal')">Manipal</button>
+                <button type="button" class="univ-popular-pill" data-tag="Amity" onclick="app.filterUniversityByTag('Amity')">Amity</button>
+                <button type="button" class="univ-popular-pill" data-tag="NMIMS" onclick="app.filterUniversityByTag('NMIMS')">NMIMS</button>
+                <button type="button" class="univ-popular-pill" data-tag="Chitkara" onclick="app.filterUniversityByTag('Chitkara')">Chitkara</button>
+                <button type="button" class="univ-popular-pill" data-tag="Jain" onclick="app.filterUniversityByTag('Jain')">Jain</button>
+                <button type="button" class="univ-popular-pill" data-tag="Chandigarh" onclick="app.filterUniversityByTag('Chandigarh')">Chandigarh</button>
+                <button type="button" class="univ-popular-pill" data-tag="Bennett" onclick="app.filterUniversityByTag('Bennett')">Bennett</button>
+                <button type="button" class="univ-popular-pill" data-tag="LPU" onclick="app.filterUniversityByTag('LPU')">LPU Punjab</button>
+                <button type="button" class="univ-popular-pill" data-tag="NAAC A++" onclick="app.filterUniversityByTag('NAAC A++')">NAAC A++</button>
+                <button type="button" class="univ-popular-pill" data-tag="UGC-DEB" onclick="app.filterUniversityByTag('UGC-DEB')">UGC-DEB</button>
+
+                <!-- Duplicate Group 2 for seamless infinite marquee loop -->
+                <button type="button" class="univ-popular-pill" data-tag="Manipal" onclick="app.filterUniversityByTag('Manipal')" aria-hidden="true" tabindex="-1">Manipal</button>
+                <button type="button" class="univ-popular-pill" data-tag="Amity" onclick="app.filterUniversityByTag('Amity')" aria-hidden="true" tabindex="-1">Amity</button>
+                <button type="button" class="univ-popular-pill" data-tag="NMIMS" onclick="app.filterUniversityByTag('NMIMS')" aria-hidden="true" tabindex="-1">NMIMS</button>
+                <button type="button" class="univ-popular-pill" data-tag="Chitkara" onclick="app.filterUniversityByTag('Chitkara')" aria-hidden="true" tabindex="-1">Chitkara</button>
+                <button type="button" class="univ-popular-pill" data-tag="Jain" onclick="app.filterUniversityByTag('Jain')" aria-hidden="true" tabindex="-1">Jain</button>
+                <button type="button" class="univ-popular-pill" data-tag="Chandigarh" onclick="app.filterUniversityByTag('Chandigarh')" aria-hidden="true" tabindex="-1">Chandigarh</button>
+                <button type="button" class="univ-popular-pill" data-tag="Bennett" onclick="app.filterUniversityByTag('Bennett')" aria-hidden="true" tabindex="-1">Bennett</button>
+                <button type="button" class="univ-popular-pill" data-tag="LPU" onclick="app.filterUniversityByTag('LPU')" aria-hidden="true" tabindex="-1">LPU Punjab</button>
+                <button type="button" class="univ-popular-pill" data-tag="NAAC A++" onclick="app.filterUniversityByTag('NAAC A++')" aria-hidden="true" tabindex="-1">NAAC A++</button>
+                <button type="button" class="univ-popular-pill" data-tag="UGC-DEB" onclick="app.filterUniversityByTag('UGC-DEB')" aria-hidden="true" tabindex="-1">UGC-DEB</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="universities-grid" id="universitiesGrid">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 5: DEDICATED INSIGHTS EDITORIAL PAGE (#insightsView)       -->
+  <!-- =================================================================== -->
+  <div id="insightsView" class="page-view" style="display: none;">
+    <div class="page-view-header">
+      <div class="container" style="max-width: 1280px;">
+        <div class="page-breadcrumb-nav">
+          <a href="javascript:void(0)" onclick="app.navigateToHome()">Home</a>
+          <span class="sep">/</span>
+          <span class="current">NEXORA Insights</span>
+        </div>
+        <h1 class="page-view-title" style="margin-top: 12px;">NEXORA INSIGHTS — Advisory Guides &amp; Regulatory Audits</h1>
+        <p class="page-view-subtitle">Deep 1000-word editorial guides, UGC regulatory warnings, decision matrices, and degree ROI frameworks.</p>
+      </div>
+    </div>
+
+    <div class="container" style="max-width: 1280px; padding-top: 36px; padding-bottom: 72px;" id="insightsMainContainer">
+      <div id="fullInsightsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =================================================================== -->
+  <!-- PAGE VIEW 6: DEDICATED COMPARE PAGE CONTAINER (#compareView)        -->
+  <!-- =================================================================== -->
+  <div id="compareView" class="page-view" style="display: none;">
+    <!-- Rendered dynamically by app.renderComparePage() -->
+  </div>
+
+
+  <!-- STICKY COMPARISON TRAY -->
+  <div class="compare-tray" id="compareTray">
+    <div style="font-size: 0.85rem; font-weight: 700; color: var(--pure-white);">
+      Compare Tray (<span id="compareCount">0/3</span>)
+    </div>
+    <div class="compare-tray-items" id="compareTrayItems">
+      <!-- Added compare items render here -->
+    </div>
+    <button class="btn btn-primary btn-sm" onclick="app.navigateToComparePage()">
+      Compare Options Side-by-Side
+    </button>
+    <button class="btn btn-secondary btn-sm compare-tray-clear-btn"
+      onclick="app.compareManager.clearAll()">
+      Clear
+    </button>
+  </div>
+
+  <!-- FAQ POP-UP MODAL OVERLAY (BODY LEVEL FOR PROPER VIEWPORT POSITIONING) -->
+  <div class="faq-popup-overlay" id="faqPopupOverlay" onclick="app.closeFAQPopupOnBackdrop(event)">
+    <div class="faq-popup-card" id="faqPopupCard" role="dialog" aria-modal="true" aria-labelledby="faqPopupQuestion">
+      <div class="faq-popup-header">
+        <div class="faq-popup-badge-group">
+          <span class="faq-popup-badge" id="faqPopupBadge">QUESTION 01</span>
+          <span class="faq-popup-category" id="faqPopupCategory">Platform &amp; Navigation</span>
+        </div>
+        <button type="button" class="faq-popup-close-btn" onclick="app.closeFAQPopup()" aria-label="Close Pop-up">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="faq-popup-body">
+        <h3 class="faq-popup-question" id="faqPopupQuestion"></h3>
+        <div class="faq-popup-answer-wrap">
+          <div class="faq-popup-answer" id="faqPopupAnswer"></div>
+        </div>
+        <div class="faq-popup-verified-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Verified by NEXORA Academic Advisory &amp; UGC-DEB Statutory Standards</span>
+        </div>
+      </div>
+
+      <div class="faq-popup-footer">
+        <div class="faq-popup-nav-links">
+          <button type="button" class="btn btn-sm btn-secondary" onclick="app.popupNavigate(-1)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Previous FAQ</span>
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="app.popupNavigate(1)">
+            <span>Next FAQ</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <button type="button" class="btn btn-sm btn-primary" onclick="app.closeFAQPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL BACKDROP MODAL CONTAINER -->
+  <div class="modal-backdrop" id="globalModalBackdrop">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005A2B" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z" />
+          </svg>
+          <h3 id="modalTitleText" style="font-size: 1.15rem; color: var(--navy);">NEXORA Navigation View</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Dynamic Modal Content rendered by views.js / compare.js / insights.js -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="color: var(--pure-white);">
+            <div class="brand-logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z" />
+              </svg>
+            </div>
+            <span>NEXORA</span>
+          </div>
+          <p class="footer-brand-desc">
+            NEXORA is a student-first education discovery & career-navigation platform. Intelligent route navigation from career destination to university selection.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="app.navigateToHome(); app.scrollToSection('routeStartsHere');" class="footer-link">Route Starts Here</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToHome(); app.scrollToSection('careerRouteSection');" class="footer-link">NEXORA Career Route</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToProgrammesPage();" class="footer-link">Programme Discovery</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToUniversitiesPage();" class="footer-link">University Directory</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Discovery</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="app.navigateToProgrammesPage();" class="footer-link">Online MBA</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToProgrammesPage();" class="footer-link">Online BBA</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToProgrammesPage();" class="footer-link">Online MCA</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToProgrammesPage();" class="footer-link">Online Data Science</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="app.navigateToInsightsPage();" class="footer-link">NEXORA Insights</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToHome(); app.scrollToSection('faq');" class="footer-link">UGC Recognition FAQ</a></li>
+            <li><a href="javascript:void(0)" onclick="app.navigateToUniversitiesPage();" class="footer-link">Accredited Universities</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEXORA Navigation Platforms India. All rights reserved.</div>
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <a href="javascript:void(0)" onclick="app.openPoliciesModal('privacy')" class="footer-link">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="app.openPoliciesModal('terms')" class="footer-link">Terms &amp; Conditions</a>
+          <a href="javascript:void(0)" onclick="app.openPoliciesModal('ugc')" class="footer-link">UGC Compliance</a>
+          <a href="javascript:void(0)" onclick="app.openPoliciesModal('refund')" class="footer-link">Fee &amp; Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS SCRIPT FILES -->
+  <script src="js/data.js?v=6"></script>
+  <script src="js/compass.js"></script>
+  <script src="js/recalculate.js"></script>
+  <script src="js/compare.js?v=2"></script>
+  <script src="js/views.js?v=4"></script>
+  <script src="js/insights.js"></script>
+  <script src="js/customMajor.js"></script>
+  <script src="js/discovery.js?v=4"></script>
+  <script src="js/app.js?v=11"></script>
+</body>
+
+</html>
